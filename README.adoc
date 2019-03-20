@@ -1,0 +1,5 @@
+= json2csv
+
+1. Takes an input directory containing JSON files.
+1. Flattens JSON.
+1. Publishes CSV files.
