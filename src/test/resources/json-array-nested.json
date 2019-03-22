@@ -8,7 +8,9 @@
       {
         "name": "g-mail"
       },
-      {"name": "sheets"}
+      {
+        "name": "sheets"
+      }
     ],
     "parent": {
       "name": "Alphabet"

@@ -12,8 +12,7 @@ class FlattenJsonTest {
 
     @Test
     void jsonToCsv() {
-        JsonObject gson = null;
-        List<String> csv = flatten.jsonToCsv(gson);
+        List<String> csv = flatten.jsonToCsv(new JsonObject());
 
         assertThat(csv.size()).isGreaterThan(0);
     }

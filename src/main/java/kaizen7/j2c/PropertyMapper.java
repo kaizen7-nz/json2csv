@@ -31,9 +31,8 @@ class PropertyMapper {
             mappedJson.add(row);
 
             traverseObjectNode(newList(), node, row);
-        } else {
-            // Valid JSON would either be object or array.
         }
+        // Valid JSON would either be object or array.
     }
 
     /**
@@ -80,7 +79,7 @@ class PropertyMapper {
         int i = 0;
         List<Map<String, String>> rows = newList();
         for (JsonElement jsonElement : element.getAsJsonArray()) {
-            if (i == 0) {
+            if (i++ == 0) {
                 // Add first as this row.
                 buildElement(path, "#", jsonElement, row);
             } else {
@@ -89,7 +88,6 @@ class PropertyMapper {
                 rows.add(clonedRow);
                 rows.addAll(buildElement(cloneList(path), "#", jsonElement, clonedRow));
             }
-            i++;
         }
         return rows;
     }
@@ -109,7 +107,6 @@ class PropertyMapper {
 
     private String rowToString(Map<String, String> row) {
         List<String> rowList = newList();
-        rowList.add(row.toString());
 
         for (String column : requiredColumns) {
             rowList.add(getValue(row.get(column)));

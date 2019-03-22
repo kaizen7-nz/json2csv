@@ -3,3 +3,7 @@
 1. Takes an input directory containing JSON files.
 1. Flattens JSON.
 1. Publishes CSV files.
+
+== How to build
+
+`./gradlew check`
